@@ -108,10 +108,6 @@ namespace Wk5Ex1
                 Console.WriteLine($"The highest grade is: {highest} and the lowest grade is: {lowest}");
             }
         }
-        static void EXIT()
-        { 
-        
-        }
         static void Main(string[] args)
         {
             //menu for Grade Management Application
@@ -123,7 +119,7 @@ namespace Wk5Ex1
                 Console.WriteLine("1 - Add Grade");
                 Console.WriteLine("2 - Remove Grade");
                 Console.WriteLine("3 - Display Grades");
-                Console.WriteLine("4 - Calculate Agerage of grades");
+                Console.WriteLine("4 - Calculate Average of grades");
                 Console.WriteLine("5 - Find the Highest & Lowest Grade");
                 Console.WriteLine("6 - EXIT");
 
@@ -149,7 +145,7 @@ namespace Wk5Ex1
                         maxAndMinGrade();
                         break;
                     case "6":
-                        EXIT();
+                        Console.WriteLine("Closing the program....");
                         return;
                     default:
                         Console.WriteLine("Invalid choice, please try again");
