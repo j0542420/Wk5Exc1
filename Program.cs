@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace Wk5Ex1
 {
@@ -43,30 +44,69 @@ namespace Wk5Ex1
             //telling user witch grade they want to remove
             Console.WriteLine("Enter a grade to remove");
             //checking if there is a valid number to remove
-            if (!int.TryParse.(Console.ReadLine(), out int grade))
+            if (int.TryParse(Console.ReadLine(), out int grade))
             {
                 //removes the grade that was inputted
                 if (grades.Remove(grade))
                 {
+                    //telling user grade was removed
                     Console.WriteLine("Grade was Successfully Removed");
                 }
                 else
                 {
+                    //telling user there was no grade
                     Console.WriteLine("Grade weas not found");
                 }
             }
         }
         static void displayGrades()
         {
-
+            //checking if there is a grade in the list
+            if (grades.Count == 0)
+            {
+                //shows a message if there is no grade
+                Console.WriteLine("There are no grades to show");
+            }
+            else 
+            {
+                //showing the grades that are in the list from when they were inputted
+                for (int i = 0; i < grades.Count; i++)
+                    Console.WriteLine(grades[i]);
+            }
         }
         static void calculateAverageGrade()
         {
-
+            //checking if there is a grade in the list
+            if (grades.Count == 0)
+            {
+                //shows a message if there is no grade
+                Console.WriteLine("There are no grades to calculate the average");
+            }
+            else
+            {
+                //declaration
+                double average = grades.Average();
+                //calculates the average of the scores
+                Console.WriteLine($"Average grade is: {average:F2}");
+            }
         }
         static void maxAndMinGrade()
         {
+            //checking if there is a grade in the list
+            if (grades.Count == 0)
+            {
+                //shows a message if there is no grade
+                Console.WriteLine("There are no grades");
+            }
+            else
+            { 
+                //declaration
+                int highest = grades.Max();
+                int lowest = grades.Min();
 
+                //showing the user the highest and lowest grades
+                Console.WriteLine($"The highest grade is: {highest} and the lowest grade is: {lowest}");
+            }
         }
         static void EXIT()
         { 
